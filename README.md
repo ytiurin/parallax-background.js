@@ -1,0 +1,1 @@
+# parallax-background.js

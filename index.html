@@ -1,0 +1,115 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><style>
+
+@font-face{
+font-family:'1';
+src:url(OpenSans-Light.ttf);
+}
+
+body{font-family:'1';margin:0;line-height:1.3;}
+
+.t{
+background-position:center top;
+height:100%;
+}
+
+.t1{background-image:url(934ru93vn0jm348f9348f84uf3948cf39.jpg)}
+.t2{background-image:url(3n90c572348cn0234u82r8cn9o.jpg)}
+.t3{background-image:url(n98vumn23r890m8934ucvm3rc348q34u57890.jpg)}
+.t4{background-image:url(cyn2389r283unc982ucmnr98234ucr9823m9c8.jpg)}
+.t5{background-image:url(rjvn9348rvj348vn34894vr930v9n30.jpg)}
+
+.f{
+height:100%;
+left:0;
+position:absolute;
+top:0;
+width:100%;
+}
+
+.s{
+background-color:#f7f7f7;
+height:90%;
+}
+
+.s>div,
+.t>div{
+font-size:2em;
+position:relative;
+text-align:center;
+top:50%;
+transform:translateY(-1em);
+}
+
+.t>div{color:#fff}
+.s>div{color:#666}
+
+small{color:#333;font-size:0.4em;display:block}
+textarea{margin:1em 0 0 0;width:960px}
+.s4>div{transform:translateY(-5em)}
+.s5{height:100%}
+a{text-decoration:none;color:#111;outline:none}
+a:after{content:' »';color:transparent}
+a:hover:after{color:#111}
+
+</style></head><body>
+<script>
+
+</script>
+<div class="f">
+<div class="t t1"><div>Parallax background</div></div>
+<div class="s s1"><div>A tiny javascript code</div></div>
+<div class="t t2"><div>change CSS background-position<br>on page scroll</div></div>
+<div class="s s2"><div>emulate parallax movement effect</div></div>
+<div class="t t3"><div>Try instruction</div></div>
+<div class="s s3"><div>Open website with big background<br>images in a new tab</div></div>
+<div class="t t4"><div>activate console<br>F12</div></div>
+<div class="s s4"><div>copy-paste script to the console and execute<br>
+  <textarea rows="10">!function(p,r,l,x){function v(b,c,k,g,n,d){if((-1*b.top)>b.height||b.top>k)return;d=0;b.top<0&&(d=-1*b.top/2);n=b.top+b.height;n>k&&(d=-1*(n-k)/2);c[l[0]]=(c[l[0]].split(' ')[0]||'50%')+' '+d+'px';c[l[1]]!=='scroll'&&(c[l[1]]='scroll')}function w(i){for(i=x.length;i--;)v(x[i].getBoundingClientRect(),x[i].style,r.innerHeight)}r=window,l=['backgroundPosition','backgroundAttachment','addEventListener','console'],x=document.querySelectorAll(p);r[l[3]]&&(r[l[3]].log('https://github.com/ytiurin/parallax-background.js')||r[l[3]].log(x));if(x.length){r[l[2]]('scroll',w);r[l[2]]('resize',w);w()}}
+(/*CSS SELECTOR*/)</textarea><br>
+  <small>replace /*CSS SELECTOR*/ with '.selector' to elements containing big background images</small></div></div>
+<div class="t t5"><div>Scroll the page<br>and check the result</div></div>
+<div class="s s5"><div><a href="https://github.com/ytiurin/parallax-background.js" target="_blank">Fork</a></div></div>
+</div>
+
+<script>
+
+!function(p,r,l,x){
+  function v(b,c,k,g,n,d)
+  {
+    if((-1*b.top)>b.height||b.top>k)
+      return;
+
+    d=0;
+    b.top<0&&
+      (d=-1*b.top/2);
+
+    n=b.top+b.height;
+    n>k&&
+      (d=-1*(n-k)/2);
+
+    c[l[0]]=(c[l[0]].split(' ')[0]||'50%')+' '+d+'px';
+    c[l[1]]!=='scroll'&&
+      (c[l[1]]='scroll')
+  }
+
+  function w(i)
+  {
+    for(i=x.length;i--;)
+      v(x[i].getBoundingClientRect(),x[i].style,r.innerHeight)
+  }
+
+  r=window,l=['backgroundPosition','backgroundAttachment','addEventListener',
+    'console'],x=document.querySelectorAll(p);
+
+  r[l[3]]&&(r[l[3]].log('https://github.com/ytiurin/parallax-background.js')||
+    r[l[3]].log(x));
+
+  if(x.length){
+    r[l[2]]('scroll',w);
+    r[l[2]]('resize',w);
+    w()
+  }
+}
+('.t')
+
+</script></body></html>

@@ -2,42 +2,53 @@
 * https://github.com/ytiurin/parallax-background.js
 * https://github.com/ytiurin/parallax-background.js/raw/master/LICENSE
 */
+!function(){
 
-!function(p,r,l,x){
-  function v(b,c,k,g,n,d)
+  var
+  w=window,cl=console,
+  updateEvents=['scroll','resize'],
+  elements=document.querySelectorAll(arguments[0]),
+  nmBackgroundPosition='backgroundPosition',
+  nmBackgroundAttachment='backgroundAttachment';
+
+  function updateBackground(rect,style)
   {
-    if((-1*b.top)>b.height||b.top>k)
+    var
+      innerHeight=w.innerHeight,
+      rectHeight=rect.height,
+      rectTop=rect.top,
+      rectBottomOffset=rectTop+rectHeight,
+      offset=0;
+
+    if((-1*rectTop)>rectHeight||rectTop>innerHeight)
       return;
 
-    d=0;
-    b.top<0&&
-      (d=-1*b.top/2);
+    if(rectTop<0)
+      offset=-1*rectTop>>1;
 
-    n=b.top+b.height;
-    n>k&&
-      (d=-1*(n-k)/2);
+    if(rectBottomOffset>innerHeight)
+      offset=-1*(rectBottomOffset-innerHeight)>>1;
 
-    c[l[0]]=(c[l[0]].split(' ')[0]||'50%')+' '+d+'px';
-    c[l[1]]!=='scroll'&&
-      (c[l[1]]='scroll')
+    style[nmBackgroundPosition]=(style[nmBackgroundPosition].split(' ')[0]||'50%')+' '+offset+'px';
+
+    if(style[nmBackgroundAttachment]!=='scroll')
+      style[nmBackgroundAttachment]='scroll';
   }
 
-  function w(i)
+  function iterateElements(i)
   {
-    for(i=x.length;i--;)
-      v(x[i].getBoundingClientRect(),x[i].style,r.innerHeight)
+    for(i=elements.length;i--;)
+      updateBackground(elements[i].getBoundingClientRect(),elements[i].style);
   }
 
-  r=window,l=['backgroundPosition','backgroundAttachment','addEventListener',
-    'console'],x=document.querySelectorAll(p);
+  if(cl)
+    cl.log('https://github.com/ytiurin/parallax-background.js'),
+    cl.log(elements);
 
-  r[l[3]]&&(r[l[3]].log('https://github.com/ytiurin/parallax-background.js')||
-    r[l[3]].log(x));
-
-  if(x.length){
-    r[l[2]]('scroll',w);
-    r[l[2]]('resize',w);
-    w()
+  if(elements.length){
+    for(var i in updateEvents)
+      addEventListener(updateEvents[i],iterateElements);
+    iterateElements();
   }
 }
 (/*CSS SELECTOR*/)

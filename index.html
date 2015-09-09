@@ -78,54 +78,18 @@ a:hover:after{color:#111}
 <div class="s s3"><div>Open website with big background<br>images in a new tab</div></div>
 <div class="t t4"><div>activate console<br>F12</div></div>
 <div class="s s4"><div>copy-paste script to the console and execute<br>
-  <textarea rows="10">!function(p,r,l,x){function v(b,c,k,g,n,d){if((-1*b.top)>b.height||b.top>k)return;d=0;b.top<0&&(d=-1*b.top/2);n=b.top+b.height;n>k&&(d=-1*(n-k)/2);c[l[0]]=(c[l[0]].split(' ')[0]||'50%')+' '+d+'px';c[l[1]]!=='scroll'&&(c[l[1]]='scroll')}function w(i){for(i=x.length;i--;)v(x[i].getBoundingClientRect(),x[i].style,r.innerHeight)}r=window,l=['backgroundPosition','backgroundAttachment','addEventListener','console'],x=document.querySelectorAll(p);r[l[3]]&&(r[l[3]].log('https://github.com/ytiurin/parallax-background.js')||r[l[3]].log(x));if(x.length){r[l[2]]('scroll',w);r[l[2]]('resize',w);w()}}
+  <textarea rows="10">!function(){function g(b,c){var d=a.innerHeight,g=b.height,h=b.top,i=h+g,j=0;-1*h>g||h>d||(0>h&&(j=-1*h>>1),i>d&&(j=-1*(i-d)>>1),c[e]=(c[e].split(" ")[0]||"50%")+" "+j+"px","scroll"!==c[f]&&(c[f]="scroll"))}function h(a){for(a=d.length;a--;)g(d[a].getBoundingClientRect(),d[a].style)}var a=window,b=console,c=["scroll","resize"],d=document.querySelectorAll(arguments[0]),e="backgroundPosition",f="backgroundAttachment";if(b&&(b.log("https://github.com/ytiurin/parallax-background.js"),b.log(d)),d.length){for(var i in c)addEventListener(c[i],h);h()}}
 (/*CSS SELECTOR*/)</textarea><br>
   <small>replace /*CSS SELECTOR*/ with '.selector' to elements containing big background images</small></div></div>
 <div class="t t5"><div>Scroll the page<br>and check the result</div></div>
 <div class="s s5"><div><a href="https://github.com/ytiurin/parallax-background.js" target="_blank">Fork</a></div></div>
 </div>
 
-<script>
-
-!function(p,r,l,x){
-  function v(b,c,k,g,n,d)
-  {
-    if((-1*b.top)>b.height||b.top>k)
-      return;
-
-    d=0;
-    b.top<0&&
-      (d=-1*b.top/2);
-
-    n=b.top+b.height;
-    n>k&&
-      (d=-1*(n-k)/2);
-
-    c[l[0]]=(c[l[0]].split(' ')[0]||'50%')+' '+d+'px';
-    c[l[1]]!=='scroll'&&
-      (c[l[1]]='scroll')
-  }
-
-  function w(i)
-  {
-    for(i=x.length;i--;)
-      v(x[i].getBoundingClientRect(),x[i].style,r.innerHeight)
-  }
-
-  r=window,l=['backgroundPosition','backgroundAttachment','addEventListener',
-    'console'],x=document.querySelectorAll(p);
-
-  r[l[3]]&&(r[l[3]].log('https://github.com/ytiurin/parallax-background.js')||
-    r[l[3]].log(x));
-
-  if(x.length){
-    r[l[2]]('scroll',w);
-    r[l[2]]('resize',w);
-    w()
-  }
-}
+<!-- Parallax background --><script type="text/javascript">!function(){function g(b,c){var d=a.innerHeight,g=b.height,h=b.top,i=h+g,j=0;-1*h>g||h>d||(0>h&&(j=-1*h>>1),i>d&&(j=-1*(i-d)>>1),c[e]=(c[e].split(" ")[0]||"50%")+" "+j+"px","scroll"!==c[f]&&(c[f]="scroll"))}function h(a){for(a=d.length;a--;)g(d[a].getBoundingClientRect(),d[a].style)}var a=window,b=console,c=["scroll","resize"],d=document.querySelectorAll(arguments[0]),e="backgroundPosition",f="backgroundAttachment";if(b&&(b.log("https://github.com/ytiurin/parallax-background.js"),b.log(d)),d.length){for(var i in c)addEventListener(c[i],h);h()}}
 ('.t')
+</script>
 
+<script type="text/javascript">
 //GA
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
